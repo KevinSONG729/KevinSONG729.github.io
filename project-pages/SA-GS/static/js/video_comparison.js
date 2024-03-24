@@ -9,6 +9,7 @@ function playVids(videoId) {
     var position = 0.5;
     var vidWidth = vid.videoWidth/2;
     var vidHeight = vid.videoHeight;
+    console.log(videoId + "Merge");
 
     var mergeContext = videoMerge.getContext("2d");
 

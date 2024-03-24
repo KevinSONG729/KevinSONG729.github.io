@@ -189,3 +189,10 @@
 .b-dics--vertical .b-dics__slider:before {
     transform : translate(-50%, -50%);
 }
+
+.row_two_columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }

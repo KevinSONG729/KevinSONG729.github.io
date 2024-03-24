@@ -79,53 +79,96 @@ document.addEventListener('DOMContentLoaded', domReady);
                 }
             }
         }
-
         function objectSceneEvent(idx) {
             let dics = document.querySelectorAll('.b-dics')[0]
             let sections = dics.getElementsByClassName('b-dics__section')
-            let imagesLength = 4
+            let imagesLength = 4;
+            if(idx>=3) imagesLength = 3;
+            // console.log(sections);
             for (let i = 0; i < imagesLength; i++) {
+                // console.log(sections[i]);
+                if(imagesLength == 3 && sections.length == 4){
+                    window.tmp = sections[3];
+                    window.tmp_slide = sections[2].getElementsByClassName('b-dics__slider')[0];
+                    sections[3].remove();
+                    sections[2].getElementsByClassName('b-dics__slider')[0].remove();
+                    sections[0].setAttribute('style', 'flex: 0 0 333.33px;');
+                    sections[0].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 333.33px;');
+                    sections[1].setAttribute('style', 'flex: 0 0 333.33px;');
+                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Adaptive Filter (Ours)';
+                    sections[1].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 666.67px;');
+                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -333.33px;');
+                    sections[2].setAttribute('style', 'flex: 0 0 333.33px;');
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'GT';
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -666.67px;');
+                }
+                if(imagesLength == 4 && sections.length == 3){
+                    dics.appendChild(window.tmp);
+                    sections[2].appendChild(window.tmp_slide);
+                    sections = dics.getElementsByClassName('b-dics__section');
+                    sections[0].setAttribute('style', 'flex: 0 0 250px;');
+                    sections[0].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 250px;');
+                    sections[1].setAttribute('style', 'flex: 0 0 250px;');
+                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Integration (Ours)';
+                    sections[1].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 500px;');
+                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -250px;');
+                    sections[2].setAttribute('style', 'flex: 0 0 250px;');
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Super Sampling (Ours)';
+                    sections[2].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 750px;');
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -500px;');
+                    sections[3].setAttribute('style', 'flex: 0 0 250px;');
+                    sections[3].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'GT';
+                    sections[3].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -750px;');
+                }
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'resources/360_stmt_supp/bicycle_0';
+                        image.src = 'resources/360_images/bicycle_48';
                         break;
                     case 1:
-                        image.src = 'resources/360_stmt_supp/bonsai_12';
+                        image.src = 'resources/360_images/room_25';
                         break;
                     case 2:
-                        image.src = 'resources/360_stmt_supp/counter_19';
+                        image.src = 'resources/360_images/kitchen_59';
                         break;
                     case 3:
-                        image.src = 'resources/360_stmt_supp/flowers_8';
+                        image.src = 'resources/360_images/garden_8';
                         break;
                     case 4:
-                        image.src = 'resources/360_stmt_supp/garden_1';
+                        image.src = 'resources/360_images/counter_134';
                         break;
                     case 5:
-                        image.src = 'resources/360_stmt_supp/kitchen_0';
+                        image.src = 'resources/360_images/treehill_64';
                         break;
-                    case 6:
-                        image.src = 'resources/360_stmt_supp/stump_0';
-                        break;
-                    case 7:
-                        image.src = 'resources/360_stmt_supp/treehill_0';
-                        break;    
                 }
-                switch (i) {
-                    case 0:
-                        image.src = image.src + '_ewa.jpg';
-                        break;
-                    case 1:
-                        image.src = image.src + '_ours.jpg';
-                        break;
-                    case 2:
-                        image.src = image.src + '_upgt.jpg';
-                        break;
-                    case 3:
-                        image.src = image.src + '_gt.jpg';
-                        break;
-
+                if(idx<3){
+                    switch (i) {
+                        case 0:
+                            image.src = image.src + '_raw.png';
+                            break;
+                        case 1:
+                            image.src = image.src + '_sags_int.png';
+                            break;
+                        case 2:
+                            image.src = image.src + '_sags_sup.png';
+                            break;
+                        case 3:
+                            image.src = image.src + '_gt.png';
+                            break;
+    
+                    }
+                }else{
+                    switch (i) {
+                        case 0:
+                            image.src = image.src + '_raw.png';
+                            break;
+                        case 1:
+                            image.src = image.src + '_fil.png';
+                            break;
+                        case 2:
+                            image.src = image.src + '_gt.png';
+                            break;
+                    }
                 }
             }
 
