@@ -82,43 +82,49 @@ document.addEventListener('DOMContentLoaded', domReady);
         function objectSceneEvent(idx) {
             let dics = document.querySelectorAll('.b-dics')[0]
             let sections = dics.getElementsByClassName('b-dics__section')
-            let imagesLength = 4;
-            if(idx>=3) imagesLength = 3;
+            let imagesLength = 5;
+            if(idx>=3) imagesLength = 4;
             // console.log(sections);
             for (let i = 0; i < imagesLength; i++) {
                 // console.log(sections[i]);
-                if(imagesLength == 3 && sections.length == 4){
-                    window.tmp = sections[3];
-                    window.tmp_slide = sections[2].getElementsByClassName('b-dics__slider')[0];
-                    sections[3].remove();
-                    sections[2].getElementsByClassName('b-dics__slider')[0].remove();
-                    sections[0].setAttribute('style', 'flex: 0 0 333.33px;');
-                    sections[0].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 333.33px;');
-                    sections[1].setAttribute('style', 'flex: 0 0 333.33px;');
-                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Adaptive Filter (Ours)';
-                    sections[1].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 666.67px;');
-                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -333.33px;');
-                    sections[2].setAttribute('style', 'flex: 0 0 333.33px;');
-                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'GT';
-                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -666.67px;');
-                }
-                if(imagesLength == 4 && sections.length == 3){
-                    dics.appendChild(window.tmp);
-                    sections[2].appendChild(window.tmp_slide);
-                    sections = dics.getElementsByClassName('b-dics__section');
+                if(imagesLength == 4 && sections.length == 5){
+                    window.tmp = sections[4];
+                    window.tmp_slide = sections[3].getElementsByClassName('b-dics__slider')[0];
+                    sections[4].remove();
+                    sections[3].getElementsByClassName('b-dics__slider')[0].remove();
                     sections[0].setAttribute('style', 'flex: 0 0 250px;');
                     sections[0].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 250px;');
                     sections[1].setAttribute('style', 'flex: 0 0 250px;');
-                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Integration (Ours)';
                     sections[1].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 500px;');
                     sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -250px;');
                     sections[2].setAttribute('style', 'flex: 0 0 250px;');
-                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Super Sampling (Ours)';
                     sections[2].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 750px;');
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Adaptive Filter (Ours)';
                     sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -500px;');
                     sections[3].setAttribute('style', 'flex: 0 0 250px;');
                     sections[3].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'GT';
                     sections[3].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -750px;');
+                }
+                if(imagesLength == 5 && sections.length == 4){
+                    dics.appendChild(window.tmp);
+                    sections[3].appendChild(window.tmp_slide);
+                    sections = dics.getElementsByClassName('b-dics__section');
+                    sections[0].setAttribute('style', 'flex: 0 0 200px;');
+                    sections[0].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 200px;');
+                    sections[1].setAttribute('style', 'flex: 0 0 200px;');
+                    sections[1].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 400px;');
+                    sections[1].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -200px;');
+                    sections[2].setAttribute('style', 'flex: 0 0 200px;');
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Integration (Ours)';
+                    sections[2].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 600px;');
+                    sections[2].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -400px;');
+                    sections[3].setAttribute('style', 'flex: 0 0 200px;');
+                    sections[3].getElementsByClassName('b-dics__slider')[0].setAttribute('style', 'left: 800px;');
+                    sections[3].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'SA-GS Super Sampling (Ours)';
+                    sections[3].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -600px;');
+                    sections[4].setAttribute('style', 'flex: 0 0 200px;');
+                    sections[4].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__text')[0].innerText = 'GT';
+                    sections[4].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0].setAttribute('style', 'left: -800px;');
                 }
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
@@ -147,12 +153,15 @@ document.addEventListener('DOMContentLoaded', domReady);
                             image.src = image.src + '_raw.png';
                             break;
                         case 1:
-                            image.src = image.src + '_sags_int.png';
+                            image.src = image.src + '_mip.png';
                             break;
                         case 2:
-                            image.src = image.src + '_sags_sup.png';
+                            image.src = image.src + '_sags_int.png';
                             break;
                         case 3:
+                            image.src = image.src + '_sags_sup.png';
+                            break;
+                        case 4:
                             image.src = image.src + '_gt.png';
                             break;
     
@@ -163,9 +172,12 @@ document.addEventListener('DOMContentLoaded', domReady);
                             image.src = image.src + '_raw.png';
                             break;
                         case 1:
-                            image.src = image.src + '_fil.png';
+                            image.src = image.src + '_mip.png';
                             break;
                         case 2:
+                            image.src = image.src + '_fil.png';
+                            break;
+                        case 3:
                             image.src = image.src + '_gt.png';
                             break;
                     }
