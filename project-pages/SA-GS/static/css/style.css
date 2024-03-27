@@ -286,6 +286,11 @@ li {
 .b-dics__slider {
     color: #f0f0f0;
 }
+
+.b-dics__slider-black {
+    color: #434343;
+}
+
 .b-dics__slider:after {
     width: 2px;
 }

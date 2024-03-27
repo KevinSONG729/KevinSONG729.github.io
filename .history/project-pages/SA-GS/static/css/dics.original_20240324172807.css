@@ -12,8 +12,8 @@
 }
 
 .b-dics__slider:hover :before {
-    color        : #FFFFFF;
-    border-color : #FFFFFF;
+    color        : #646464;
+    border-color : #3a3a3a;
 }
 
 .b-dics__text {
@@ -54,7 +54,7 @@
 }
 
 .b-dics__slider {
-    color        : #FFFFFF;
+    color        : #606060;
     position     : absolute;
     left         : 100%;
     top          : 0;

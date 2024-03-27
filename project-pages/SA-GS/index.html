@@ -54,8 +54,10 @@
   <script src="./static/js/video_comparison_3.js"></script>
 
   <link rel="stylesheet" href="./static/css/dics.original.css">
+  <link rel="stylesheet" href="./static/css/dics2.original.css">
   <script src="./static/js/event_handler.js"></script>
   <script src="./static/js/dics.original.js"></script>
+  <script src="./static/js/dics2.original.js"></script>
   <script>
     function openDemo(demoName) {
       window.location = 'https://KevinSONG729.github.io/project-pages/SA-GS/demo/' + demoName + '.html';
@@ -76,14 +78,15 @@
           
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://KevinSONG729.github.io/">Xiaowei Song</a><sup>1</sup></span>
+              <a href="https://KevinSONG729.github.io/">Xiaowei Song</a><sup>*1,2</sup></span>
             <span class="author-block">
-              <a href="https://apchenstu.github.io/">Jv Zheng</a><sup>2</sup></span>
+              <a href="https://apchenstu.github.io/">Jv Zheng</a><sup>*1,3</sup></span>
             <span class="author-block">
-              <a href="https://github.com/hbb1">Shiran Yuan</a><sup>3</sup>
+              <a href="https://github.com/hbb1">Shiran Yuan</a><sup>1,4</sup>
             </span>
+            <br>
             <span class="author-block">
-              <a href="https://tsattler.github.io/">Huan-ang Gao</a><sup>4</sup>
+              <a href="https://tsattler.github.io/">Huan-ang Gao</a><sup>1</sup>
             </span>
             <span class="author-block">
               <a href="http://www.cvlibs.net/">Jingwei Zhao</a><sup>5</sup>
@@ -95,16 +98,16 @@
               <a href="http://www.cvlibs.net/">Weihao Gu</a><sup>5</sup>
             </span>
             <span class="author-block">
-              <a href="http://www.cvlibs.net/">Hao Zhao</a><sup>4</sup>
+              <a href="http://www.cvlibs.net/">Hao Zhao</a><sup>†1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Tongji University</span>
-            <span class="author-block"><sup>2</sup>Ocean University of China</span>
+            <span class="author-block"><sup>1</sup>Institute for AI Industry Research (AIR), Tsinghua University</span>
             <br>
-            <span class="author-block"><sup>3</sup>Duke Kunshan University</span>
-            <span class="author-block"><sup>4</sup>Air,Tsinghua University</span>
+            <span class="author-block"><sup>2</sup>Tongji University</span>
+            <span class="author-block"><sup>3</sup>Ocean University of China</span>
+            <span class="author-block"><sup>4</sup>Duke Kunshan University</span>
             <span class="author-block"><sup>5</sup>Haomo.ai</span>
             
           </div>
@@ -193,7 +196,7 @@
 
         <img src="./resources/model_images/teaser.png" class="center">
         <div class="content has-text-justified">
-          <p style="margin-top: 30px">
+          <p style="margin-top: 0px">
             Under zoom-in, 3D Gaussian Splatting (3DGS) exhibits significant erosion artefacts, while under zoom-out, it undergoes dramatic dilation. 
             Mip-Splatting utilizes 3D smoothing and 2D Mip filters to regularize primitives <b>during training</b>. In contrast, our method is 
             <b>training-free</b> and maintains scale consistency using solely a single <b>2D scale-adaptive filter</b>. Scale adaptation allows us to 
@@ -358,6 +361,7 @@
             performance improvements over 3DGS, while significantly outperforming Mip-Splatting in the zoom-out case.
           </p>
         </div>
+
         <div class="content has-text-centered">
           <video class="video" width="100%" id="xyalias12" loop playsinline autoplay muted src="resources/blender.mp4"></video>
           <canvas height=0 class="videoMerge" id="xyalias12Merge"></canvas>
@@ -366,30 +370,30 @@
         <div class="container">
           <ul class="nav nav-tabs nav-fill nav-justified" id="ablation-3d-filter">
               <li class="nav-item">
-                <a class="nav-link active" onclick="ablation3DEvent(0)">bicycle 1</a>
+                <a class="nav-link active" onclick="ablation3DEvent(0)">chair(1/8x)</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(1)">bicycle 2</a>
+                <a class="nav-link" onclick="ablation3DEvent(1)">ficus(1/8x)</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(2)">bicycle 3</a>
+                <a class="nav-link" onclick="ablation3DEvent(2)">ship(1/8x)</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(3)">garden 1</a>
+                <a class="nav-link" onclick="ablation3DEvent(3)">drum(8x)</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(4)">garden 2</a>
+                <a class="nav-link" onclick="ablation3DEvent(4)">hotdog(8x)</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="ablation3DEvent(5)">treehill</a>
+                <a class="nav-link" onclick="ablation3DEvent(5)">mic(8x)</a>
               </li>
           </ul>
           <div class="b-dics" style="width: 1000px; font-weight: 600;">
-              <img src="resources/360_stmt_ablation/bicycle_0_no3d.jpg" alt="Ours w/o 3D filter">
-              <img src="resources/360_stmt_ablation/bicycle_0_ours.jpg" alt="Mip-Splatting (ours)">
-              <img src="resources/360_stmt_ablation/bicycle_0_upgt.jpg" alt="GT (Training resolution)">
-              <img src="resources/360_stmt_ablation/bicycle_0_gt.jpg" alt="GT (8x resolution)">
-              
+            <img src="resources/blender_images/chair_raw.png" alt="3DGS">
+            <img src="resources/blender_images/chair_mip.png" alt="Mip-Splatting">
+            <img src="resources/blender_images/chair_int.png" alt="SA-GS Integration (Ours)">
+            <img src="resources/blender_images/chair_sup.png" alt="SA-GS Super Sampling (Ours)">
+            <img src="resources/blender_images/chair_gt.png" alt="GT">
           </div>
         </div>
 
@@ -400,6 +404,16 @@
             Our 2D Mip filter simulates a 2D box filter in physical imaging process. It approximates exactly 1 pixel in screen space, thus effectively reducing aliasing artifacts.
             As shown in the following video, removing the 2D Mip filter results in aliasing artifacts when zooming out.
           </p>
+        </div>
+        <div class="row_two_columns">
+          <div class="content has-text-lefted">
+            <video class="video" id="filter_ablation_zoomout" loop playsinline autoplay muted src="resources/filter_abaltion_zoomout.mp4" onplay="resizeAndPlay3(this)" ></video>
+            <canvas height=0 class="videoMerge" id="filter_ablation_zoomoutMerge3"></canvas>
+          </div>
+          <div class="content has-text-righted" type="width:100px;">
+            <video class="video" id="xyalias23" loop playsinline autoplay muted src="resources/filter_ablation_zoomin.mp4" onplay="resizeAndPlay(this)" ></video>
+            <canvas height=0 class="videoMerge" id="xyalias23Merge"></canvas>
+          </div>
         </div>
       </div>
     </div>
