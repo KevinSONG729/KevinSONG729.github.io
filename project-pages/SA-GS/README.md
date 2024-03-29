@@ -1,14 +1,16 @@
 # Nerfies
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains the project page of SA-GS（Scale-Adaptive Gaussian Splatting for Training-free Anti-Aliasing）, [](https://nerfies.github.io).
 
 If you find Nerfies useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@misc{song2024sags,
+      title={SA-GS: Scale-Adaptive Gaussian Splatting for Training-Free Anti-Aliasing}, 
+      author={Xiaowei Song and Jv Zheng and Shiran Yuan and Huan-ang Gao and Jingwei Zhao and Xiang He and Weihao Gu and Hao Zhao},
+      year={2024},
+      eprint={2403.19615},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
