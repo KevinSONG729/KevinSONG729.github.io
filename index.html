@@ -231,7 +231,7 @@
       <tr onmouseout="randla_stop()" onmouseover="randla_stop()" bgcolor="#ffffd0"> <!-- bgcolor="#ffffd0" --> 
         <td style="padding:20px;width:25%;vertical-align:middle">
           <div class="one">
-            <div class="two" id='randla_image'><video  width=100% height=100% muted autoplay loop>
+            <div class="two" id='gs_image'><video  width=100% height=100% muted autoplay loop>
             <source src="project-pages/SA-GS/resources/bicycle_zoomoutin.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video></div>
@@ -263,7 +263,7 @@
           <p>
             <!-- RandLA-Net(CVPR2020) is a light net which can process efficient semantic segmentation for <strong>3D point clouds</strong>,  -->
             <!-- and SQN(ECCV2022) is based on RandLA-Net and achieves promising performance on seven large-scale open datasets under <strong>weak supervision schemes</strong>.  -->
-            A coarse-to-fine training strategy was used to train the Gaussian field. Minimum size and maximum number of Gaussians are set for each order, resulting in a compact and anti-aliased representation.
+            A training-free approach that can be directly applied to the inference process of any pretrained 3DGS model to resolve its visual artefacts at drastically changed rendering settings.
           </p>
         </td>
       </tr>
