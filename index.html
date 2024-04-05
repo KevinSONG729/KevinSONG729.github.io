@@ -228,24 +228,24 @@
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody>
       
       <!-- SA-GS -->
-      <tr onmouseout="randla_stop()" onmouseover="randla_stop()" bgcolor="#ffffd0"> <!-- bgcolor="#ffffd0" --> 
+      <tr onmouseout="gs_stop()" onmouseover="gs_start()" bgcolor="#ffffd0"> <!-- bgcolor="#ffffd0" --> 
         <td style="padding:20px;width:25%;vertical-align:middle">
           <div class="one">
-            <div class="two" id='gs_image'><video  width=100% height=100% muted autoplay loop>
+            <div class="two" id='gs_image'><video width=100% height=100% muted autoplay loop>
             <source src="project-pages/SA-GS/resources/bicycle_zoomoutin.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video></div>
             <img src='research\SA-GS.png' width="160">
           </div>
           <script type="text/javascript">
-            function randla_start() {
-              document.getElementById('randla_image').style.opacity = "1";
+            function gs_start() {
+              document.getElementById('gs_image').style.opacity = "1";
             }
 
-            function randla_stop() {
-              document.getElementById('randla_image').style.opacity = "0";
+            function gs_stop() {
+              document.getElementById('gs_image').style.opacity = "0";
             }
-            randla_stop()
+            gs_stop()
           </script>
         </td>
         <td style="padding:20px;width:75%;vertical-align:middle">
